@@ -197,7 +197,6 @@ CREATE TABLE supplier (
 
 CREATE TABLE product (
     product_id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-    business_id INT UNSIGNED NOT NULL,
     sku VARCHAR(50) NOT NULL,
     barcode VARCHAR(50),
     name VARCHAR(200) NOT NULL,
@@ -235,9 +234,6 @@ CREATE TABLE product (
     requires_prescription BOOLEAN DEFAULT FALSE,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-    UNIQUE KEY uk_business_sku (business_id, sku),
-    UNIQUE KEY uk_business_barcode (business_id, barcode),
-    INDEX idx_product_business (business_id),
     INDEX idx_product_category (category_id),
     INDEX idx_product_brand (brand_id),
     INDEX idx_product_supplier (supplier_id),

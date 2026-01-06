@@ -1,0 +1,19 @@
+{{define "layout"}}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Title</title>
+  </head>
+  <body>
+    <h1>Welcome!</h1>
+    <p>This is a Home view.</p>
+    <a href="/">Home</a>
+    <a href="/currency">Currency</a>
+    <main>
+      {{ template "content" . }}
+    </main>
+  </body>
+</html>
+{{end}}

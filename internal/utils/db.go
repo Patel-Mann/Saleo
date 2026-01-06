@@ -15,7 +15,7 @@ var DB *sql.DB
 func InitDB(){
 	var err error
 
-	err = godotenv.Load()
+	err = godotenv.Load(".env")
   if err != nil {
   	log.Fatal("Error loading .env file")
   }	
@@ -26,6 +26,7 @@ func InitDB(){
   cfg.Net = "tcp"
   cfg.Addr = "127.0.0.1:3306"
   cfg.DBName = "saleo"
+	cfg.ParseTime = true
 	
 	//dsn := "root@tcp(127.0.0.1:3306)/saleo?parseTime=true"
 	DB, err = sql.Open("mysql", cfg.FormatDSN())
