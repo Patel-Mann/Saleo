@@ -16,3 +16,15 @@ type Currency struct{
 	Created_at				*time.Time 
 	Updated_at				*time.Time 
 }
+
+type Unite_Measure struct{
+	Uom_id	int
+	Code		string
+	Name 		string
+	Type								string
+	Base_unit_id				int
+	Conversion_factor 	float32
+	Is_active    				bool
+	Created_at 					bool
+}
+

@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Page Title</title>
     <style>
-    @import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400&family=Fira+Sans:wght@400;600&family=Fira+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400&family=Fira+Sans:wght@400;600&family=Fira+Mono&display=swap');
 
 * {
   box-sizing: border-box;
@@ -52,12 +52,14 @@ h3 {
 
 a:link {
   color: #505080;
+  font-weight:bold;
   text-decoration: none;
   border-bottom: 1px dotted;
 }
 
 a:visited {
-  color: #707070;
+  color: #505080;
+  font-weight:bold;
   text-decoration: none;
   border-bottom: 1px dotted;
 }
@@ -106,6 +108,8 @@ table {
     <p>This is a Home view.</p>
     <a href="/">Home</a>
     <a href="/currency">Currency</a>
+    <a href="/unit_measure">Unit_measurement</a>
+
     <main>
       {{ template "content" . }}
     </main>

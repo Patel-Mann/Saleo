@@ -32,4 +32,10 @@ func Get_currency(w http.ResponseWriter, r *http.Request){
 		"CurrencyList": array,
 		})
 
-} 
+}
+
+func Add_currency(w http.ResponseWriter, r *http.Request){
+	utils.Render(w, "/currency/add_currency.html", map[string]interface{}{
+		"Title":	"Add_currency",
+	})
+}

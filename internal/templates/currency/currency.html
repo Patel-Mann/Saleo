@@ -4,15 +4,15 @@
 <a href="/currency/delete">Delete</a>
 <table>
   <tr>
-    <th>currency_id</th>
+    <th>id</th>
     <th>code</th>
     <th>name</th>
     <th>symbol</th>
     <th>Exchange_rate</th>
-    <th>Is_base_currency</th>
+    <th>Base_currency</th>
     <th>Is_active</th>
-    <th>Created_at</th>
-    <th>Updated_at</th>
+    <th>Created</th>
+    <th>Updated</th>
   </tr>
 
   {{range .CurrencyList}}
@@ -22,7 +22,7 @@
     <td>{{ .Name}}</td>
     <td>{{ .Symbol}}</td>
     <td>{{ .Exchange_rate}}</td>
-    <td>{{ .Is_base_currency}}y</td>
+    <td>{{ .Is_base_currency}}</td>
     <td>{{ .Is_active}}</td>
     <td>{{ .Created_at}}</td>
     <td>{{ .Updated_at}}</td>

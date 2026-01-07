@@ -154,16 +154,13 @@ CREATE TABLE brand (
 
 CREATE TABLE unit_of_measure (
     uom_id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-    business_id INT UNSIGNED NOT NULL,
     code VARCHAR(10) NOT NULL, -- EA, KG, LB, L, ML
     name VARCHAR(50) NOT NULL,
     type ENUM('weight', 'volume', 'length', 'each', 'time') NOT NULL,
     base_unit_id INT UNSIGNED, -- For conversions
     conversion_factor DECIMAL(10,6) DEFAULT 1.000000,
     is_active BOOLEAN DEFAULT TRUE,
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    UNIQUE KEY uk_business_uom_code (business_id, code),
-    INDEX idx_uom_business (business_id)
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB;
 
 CREATE TABLE supplier (
@@ -762,12 +759,12 @@ INSERT INTO role (name, description, is_system_role) VALUES
 ('Sales Associate', 'Sales and customer service', TRUE);
 
 -- Insert default units of measure
-INSERT INTO unit_of_measure (business_id, code, name, type) VALUES
-(NULL, 'EA', 'Each', 'each'),
-(NULL, 'KG', 'Kilogram', 'weight'),
-(NULL, 'LB', 'Pound', 'weight'),
-(NULL, 'L', 'Liter', 'volume'),
-(NULL, 'ML', 'Milliliter', 'volume');
+INSERT INTO unit_of_measure (code, name, type) VALUES
+('EA', 'Each', 'each'),
+('KG', 'Kilogram', 'weight'),
+('LB', 'Pound', 'weight'),
+('L', 'Liter', 'volume'),
+('ML', 'Milliliter', 'volume');
 
 -- Additional indexes for reporting queries
 CREATE INDEX idx_sale_date_business ON sale(business_id, sale_date);
